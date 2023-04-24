@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extrahead %}
+ <link rel="stylesheet" href=" {% static 'cars/style/style_cars_registrer.css' %}">
+{% endblock %}
+
+{% block content %}
+  <form action="" enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+
+    <table>
+      {{ new_car_form.as_table }}
+    </table>
+    <input type="submit" id = "submit" class="submit" value="Cadastrar">
+  </form>
+{% endblock %}
